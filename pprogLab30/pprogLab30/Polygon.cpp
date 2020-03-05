@@ -50,3 +50,19 @@ int Polygon::getCountClasses() {return countClasses;}
 double Polygon::getTriangleArea(Punkt2 p1, Punkt2 p2, Punkt2 p3) {
     return abs((p2.getX() - p1.getX()) * (p3.getY() - p1.getY()) * (p3.getX() - p1.getX())) / 2;
 }
+
+double Polygon::getConvexArea(){
+    double pole = 0;
+    Punkt2 p2 = vertices[0];
+    for (int i = 1; i < count-1; i++){
+        pole += getTriangleArea(p2, vertices[i], vertices[i+1]);
+    }
+    return pole;
+}
+double Polygon::getArea(){
+    double pole = 0;
+    for (int i = 0; i < count-1; i++){
+        pole += (vertices[i].getX() + vertices[i+1].getX())*(vertices[i+1].getY() - vertices[i].getY());
+    }
+    return abs(pole)/2;
+}

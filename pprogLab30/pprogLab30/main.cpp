@@ -16,13 +16,15 @@ int main(int argc, const char * argv[]) {
     vector<Punkt2> tablica;
     
     tablica.push_back(Punkt2(0,0));
-    tablica.push_back(Punkt2(3,4));
-    tablica.push_back(Punkt2(6,1));
-    tablica.push_back(Punkt2(8,4));
-    tablica.push_back(Punkt2(1,1));
+    tablica.push_back(Punkt2(4,0));
+    tablica.push_back(Punkt2(4,4));
+    tablica.push_back(Punkt2(2,4));
+    tablica.push_back(Punkt2(0,4));
+    
+    
     
     Polygon polygon = Polygon(tablica);
     
-    cout << Punkt2().getCountClasses() <<endl;
+    cout << polygon.getConvexArea() <<endl;
     return 0;
 }
