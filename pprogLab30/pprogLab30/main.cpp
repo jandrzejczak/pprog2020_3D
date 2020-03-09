@@ -13,18 +13,27 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
+    
+    Punkt2 p1{1,0}, p2{2,6}, p3;
+    //+
+    p3=p1+p2;
+    
+    //-
+    p3=p1-p2;
+    
+    //*
+    p3=p1*p2;
+    
+    //count
     vector<Punkt2> tablica;
-    
     tablica.push_back(Punkt2(0,0));
-    tablica.push_back(Punkt2(4,0));
-    tablica.push_back(Punkt2(4,4));
-    tablica.push_back(Punkt2(2,4));
-    tablica.push_back(Punkt2(0,4));
-    
-    
-    
+    tablica.push_back(Punkt2(1,6));
+    tablica.push_back(Punkt2(7,8));
+    tablica.push_back(Punkt2(1,8));
     Polygon polygon = Polygon(tablica);
     
-    cout << polygon.getConvexArea() <<endl;
+    unsigned int count = Polygon::getCountClasses();
+    
+    cout<<count;
     return 0;
 }

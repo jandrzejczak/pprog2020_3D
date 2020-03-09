@@ -6,11 +6,14 @@ class Punkt2
     double x = 0.0;
     double y = 0.0;
     static int countClasses;
+    
 
 public:
     Punkt2();
     
     Punkt2(double _x, double _y);
+    
+    Punkt2(const Punkt2 & p);
     
     ~Punkt2();
     
@@ -32,7 +35,7 @@ public:
     
     double getDistance(Punkt2 _p);
     
-    int getCountClasses();
+    static int getCountClasses();
 };
 
 #endif /* Punkt2_h */

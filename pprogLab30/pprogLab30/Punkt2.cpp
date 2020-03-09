@@ -16,6 +16,12 @@ Punkt2::~Punkt2() {
     countClasses -= 1;
 }
 
+Punkt2::Punkt2(const Punkt2 & p)
+    {
+        x = p.x;
+        y = p.y;
+    }
+
 void Punkt2::setX(double _x) { x = _x; }
 
 void Punkt2::setY(double _y) { y = _y; }
