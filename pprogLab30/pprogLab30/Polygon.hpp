@@ -23,18 +23,20 @@ public:
     Polygon();
     Polygon(vector<Punkt2> _vertices);
     
+    Polygon(const Polygon & p);
+    
     ~Polygon();
     
     void changeVertex(int i, double x, double y);
         
-    Punkt2 * getVertices();
-    double getPerimeter();
-    double getArea();
-    double getConvexArea();
-    
-    int getCountClasses();
+    Punkt2 * getVertices() const;
+    double getPerimeter() const;
+    double getArea() const;
+    double getConvexArea() const;
+    unsigned int getCount() const;
+    static int getCountClasses();
     
 private:
-    double getTriangleArea(Punkt2 p1, Punkt2 p2, Punkt2 p3);
+    double getTriangleArea(Punkt2 p1, Punkt2 p2, Punkt2 p3) const;
 };
 #endif /* Polygon_hpp */
