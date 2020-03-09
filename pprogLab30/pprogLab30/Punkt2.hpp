@@ -14,13 +14,17 @@ public:
     
     ~Punkt2();
     
+    Punkt2 operator+(Punkt2 const &a) const;
+    Punkt2 operator-(Punkt2 const &a) const;
+    Punkt2 operator*(Punkt2 const &a) const;
+    
     void setX(double _x);
     
     void setY(double _y);
     
-    double getX();
+    double getX() const;
     
-    double getY();
+    double getY() const;
     
     double getRadius();
     
