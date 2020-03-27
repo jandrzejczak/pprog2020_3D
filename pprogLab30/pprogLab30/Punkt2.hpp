@@ -1,5 +1,7 @@
 #ifndef Punkt2_h
 #define Punkt2_h
+#include <stdio.h>
+#include <ostream>
 
 class Punkt2
 {
@@ -20,6 +22,8 @@ public:
     Punkt2 operator+(Punkt2 const &a) const;
     Punkt2 operator-(Punkt2 const &a) const;
     Punkt2 operator*(Punkt2 const &a) const;
+    
+    friend std::ostream& operator<<(std::ostream& os, const Punkt2& p);
     
     void setX(double _x);
     

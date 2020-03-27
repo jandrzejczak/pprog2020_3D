@@ -1,5 +1,7 @@
 #include "Punkt2.hpp"
 #include <cmath>
+#include <ostream>
+
 int Punkt2::countClasses = 0;
 
 Punkt2::Punkt2() {
@@ -51,5 +53,10 @@ Punkt2 Punkt2::operator+(const Punkt2 &a) const{
 Punkt2 Punkt2::operator-(const Punkt2 &a) const{
     return Punkt2(x - a.getX(), y - a.getY());
 }
+
+std::ostream& operator<<(std::ostream& os, const Punkt2& p) {
+     os << "(" << p.getX() << "," << p.getY() << ")";
+     return os;
+ }
 
 int Punkt2::getCountClasses() {return countClasses;}
