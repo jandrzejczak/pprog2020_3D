@@ -35,6 +35,25 @@ Polygon::Polygon(const Polygon & p) {
     countClasses += 1;
 }
 
+Polygon & Polygon::operator=(const Polygon &pol) {
+    if (&pol != this) {
+        count = pol.getCount();
+
+         delete[] vertices;
+        vertices = new Punkt2[count];
+        Punkt2 * v = pol.getVertices();
+        for (int i = 0; i < count; i++) {
+            vertices[i] = v[i];
+        }
+    }
+
+     return * this;
+}
+
+ Punkt2 & Polygon::operator[](int i) {
+    return vertices[i];
+}
+
 Polygon::~Polygon() {
     delete[] vertices;
     countClasses--;

@@ -37,6 +37,8 @@ public:
     double getConvexArea() const;
     unsigned int getCount() const;
     static int getCountClasses();
+    Polygon & operator=(const Polygon &pol);
+    Punkt2 & operator[](int i);
     
 private:
     double getTriangleArea(Punkt2 p1, Punkt2 p2, Punkt2 p3) const;
