@@ -22,7 +22,7 @@ class Polygon
         
 public:
     Polygon();
-    Polygon(vector<Punkt2> _vertices);
+    Polygon(initializer_list<Punkt2> _vertices);
     
     Polygon(const Polygon & p);
     
