@@ -7,6 +7,7 @@
 
 #include "Polygon.hpp"
 #include <cmath>
+#include <ostream>
 
 int Polygon::countClasses = 0;
 
@@ -34,9 +35,17 @@ Polygon::Polygon(const Polygon & p) {
 }
 
 Polygon::~Polygon() {
-    countClasses += 1;
-
     delete[] vertices;
+    countClasses--;
+}
+
+std::ostream& operator<<(std::ostream& os, const Polygon& pol) {
+    Punkt2 * v = pol.getVertices();
+    for (int i = 0; i < pol.getCount(); i++) {
+        os << v[i] << std::endl;
+    }
+
+     return os;
 }
 
 void Polygon::changeVertex(int i, double x, double y) {

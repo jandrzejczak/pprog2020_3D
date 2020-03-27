@@ -10,6 +10,7 @@
 
 #include "Punkt2.hpp"
 #include <vector>
+#include <ostream>
 
 using namespace std;
 
@@ -28,7 +29,8 @@ public:
     ~Polygon();
     
     void changeVertex(int i, double x, double y);
-        
+    
+    friend std::ostream& operator<<(std::ostream& os, const Polygon& pol);
     Punkt2 * getVertices() const;
     double getPerimeter() const;
     double getArea() const;
