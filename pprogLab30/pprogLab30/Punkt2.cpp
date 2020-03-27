@@ -59,4 +59,13 @@ std::ostream& operator<<(std::ostream& os, const Punkt2& p) {
      return os;
  }
 
+Punkt2 & Punkt2::operator=(const Punkt2 &p) {
+     if (&p != this) {
+         x = p.getX();
+         y = p.getY();
+     }
+
+      return * this;
+ }
+
 int Punkt2::getCountClasses() {return countClasses;}

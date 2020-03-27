@@ -40,6 +40,8 @@ public:
     double getDistance(Punkt2 _p);
     
     static int getCountClasses();
+    
+    Punkt2 & operator=(const Punkt2 &p);
 };
 
 #endif /* Punkt2_h */

@@ -24,16 +24,16 @@ int main(int argc, const char * argv[]) {
     //*
     p3=p1*p2;
     
+    
+    
+    
     //count
-    vector<Punkt2> tablica;
-    tablica.push_back(Punkt2(0,0));
-    tablica.push_back(Punkt2(1,6));
-    tablica.push_back(Punkt2(7,8));
-    tablica.push_back(Punkt2(1,8));
-    Polygon polygon = Polygon(tablica);
-    
+    Polygon polygon = Polygon({Punkt2(0,0), Punkt2(0,5), Punkt2(5,0), Punkt2(5,5)});
     unsigned int count = Polygon::getCountClasses();
+    cout<<count<<endl;
     
-    cout<<count;
+    
+    //cout
+    cout<<polygon<<endl;
     return 0;
 }
