@@ -16,11 +16,12 @@ Polygon::Polygon() {
 }
 
 
-Polygon::Polygon(std::vector<Punkt2> _vertices) {
+Polygon::Polygon(std::initializer_list<Punkt2> _vertices) {
     count = _vertices.size();
     vertices = new Punkt2[count];
-    for (int i = 0; i < count; i++) {
-        vertices[i] = _vertices[i];
+    int i = 0;
+    for (Punkt2 p : _vertices){
+        vertices[i++] = p;
     }
     countClasses += 1;
 }
